@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Image & Audio Generation</title>
 </head>
 <body>
+  <h1>Image to Audio</h1>
+  <div class="container">
+    <div class="image-upload">
+      <button id="upload-button">Click to Upload Image</button>
+      <p id="upload-message"></p> </div>
 
-</body>
+    <div class="style-selection">
+      <label for="style">Select Style:</label>
+      <select id="style" name="style">
+        <option value="">Choose a style...</option>
+        <option value="van_gogh">Van Gogh</option>
+        <option value="picasso">Picasso</option>
+        </select>
+    </div>
+
+    <button id="transform-button">Transform</button>
+  </div>
+
+  </body>
 </html>

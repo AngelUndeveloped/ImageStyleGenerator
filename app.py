@@ -2,18 +2,17 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-
+"""
 @app.route("/")
 def hello_world():
     return "<p> Hello, World!</p>"
-
-
 """
+
 @app.route("/")
 def index():
     return render_template("index.html")
 
-
+"""
 @app.route("/upload", methods=["POST"])
 def upload_image():
     # Access uploaded image file and save it (replace with your logic)
