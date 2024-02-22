@@ -12,7 +12,7 @@ def hello_world():
 def index():
     return render_template("index.html")
 
-"""
+
 @app.route("/upload", methods=["POST"])
 def upload_image():
     # Access uploaded image file and save it (replace with your logic)
@@ -20,7 +20,7 @@ def upload_image():
     # ... (save image_file)
     return "Image uploaded successfully!"  # Placeholder response
 
-
+"""
 @app.route("/style", methods=["POST"])
 def select_style():
     selected_style = request.form["style"]
