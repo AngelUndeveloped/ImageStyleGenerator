@@ -28,5 +28,37 @@
     </div>
 </div>
 
+<script>
+    const uploadButton = document.getElementById("upload-button");
+    const uploadMessage = document.getElementById("upload-message");
+
+    uploadButton.addEventListener("click", function() {
+      const formData = new FormData();
+      const fileInput = document.getElementById("image");
+      const selectedFile = fileInput.files[0];
+
+      if (!selectedFile) {
+        uploadMessage.textContent = "Please select an image to upload.";
+        return;
+      }
+
+      formData.append("image", selectedFile);
+
+      fetch("/upload", {
+        method: "POST",
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        uploadMessage.textContent = data.message;
+        // You can also update the src attribute of the output image here if the response contains the path to the transformed image (refer to Flask implementation)
+      })
+      .catch(error => {
+        console.error("Error uploading image:", error);
+        uploadMessage.textContent = "Error uploading image. Please try again.";
+      });
+    });
+</script>
+
 </body>
 </html>
